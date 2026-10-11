@@ -1,0 +1,2 @@
+/* El contenedor debe tener container-type: inline-size (cqw = % de su ancho) */
+.forma { position: absolute; z-index: 0; right: 1.3cqw; width: 294.9cqw; height: auto; max-width: none; pointer-events: none; }

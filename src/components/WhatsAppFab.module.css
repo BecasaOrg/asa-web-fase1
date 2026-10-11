@@ -1,0 +1,13 @@
+.fab {
+  position: fixed; right: clamp(14px, 2vw, 24px); bottom: clamp(14px, 2vw, 24px); z-index: 60;
+  display: inline-flex; align-items: center; gap: 0; height: 56px; padding: 0 14px; border-radius: var(--pill);
+  background: var(--lime); color: var(--blue); text-decoration: none; font-weight: 800;
+  box-shadow: 0 10px 30px -8px rgba(1,4,35,.55), 0 0 0 1px rgba(1,4,35,.12);
+  transition: transform .2s var(--ease), gap .3s var(--ease);
+}
+.fab img { width: 28px; height: 28px; filter: brightness(0) saturate(100%) invert(2%) sepia(52%) saturate(5000%) hue-rotate(234deg); }
+.label { max-width: 0; overflow: hidden; white-space: nowrap; transition: max-width .35s var(--ease); }
+@media (hover: hover) {
+  .fab:hover { gap: 8px; transform: translateY(-2px); }
+  .fab:hover .label { max-width: 120px; }
+}

@@ -1,0 +1,4 @@
+.banner { position: fixed; z-index: 90; left: 16px; right: 16px; bottom: 16px; max-width: 620px; margin-inline: auto; display: grid; gap: 12px; padding: 16px 18px; border-radius: var(--radius-lg); background: var(--white); color: var(--blue); box-shadow: 0 18px 50px rgba(1,4,35,.28); border: 1px solid var(--gray-200); font-size: var(--fs-small); }
+.banner a { font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+@media (min-width: 760px) { .banner { grid-template-columns: 1fr auto; align-items: center; } }

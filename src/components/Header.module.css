@@ -1,0 +1,102 @@
+.header {
+  position: fixed; inset: 0 0 auto; z-index: 50;
+  color: var(--white);
+  transition: background .3s var(--ease), box-shadow .3s var(--ease);
+}
+.solid { background: rgba(1,4,35,.82); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); box-shadow: 0 1px 0 rgba(255,255,255,.08); }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: var(--header-h); }
+.logo { display: block; flex: none; }
+.logo img { height: 40px; width: auto; }
+
+.nav { display: none; }
+.navList {
+  display: flex; align-items: center; gap: 4px; margin: 0; padding: 5px; list-style: none;
+  background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.28); border-radius: var(--pill);
+  -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur);
+}
+.navLink, .navBtn {
+  display: inline-flex; align-items: center; gap: 6px; padding: .55em 1.05em; border-radius: var(--pill);
+  font-size: .9rem; font-weight: 600; text-decoration: none; background: none; border: 0; color: var(--white);
+  transition: background .2s, color .2s;
+}
+.navLink:hover, .navBtn:hover, .navBtn[aria-expanded="true"] { background: rgba(255,255,255,.16); color: var(--lime); }
+.navBtn svg { width: 16px; height: 16px; transition: transform .2s; }
+.navBtn[aria-expanded="true"] svg { transform: rotate(180deg); }
+.current { color: var(--lime); }
+.drop { position: relative; }
+.dropMenu {
+  position: absolute; top: calc(100% + 10px); right: 0; min-width: 220px; padding: 8px; margin: 0; list-style: none;
+  background: #060a2c; border: 1px solid rgba(255,255,255,.22); border-radius: var(--radius); box-shadow: var(--shadow);
+  -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur);
+}
+.dropMenu a { display: flex; justify-content: space-between; padding: .7em .9em; border-radius: 10px; text-decoration: none; font-weight: 600; }
+.dropMenu a:hover { background: var(--blue-700); }
+.dropMenu small { color: var(--gray); font-weight: 500; }
+
+.right { display: flex; align-items: center; gap: 10px; }
+.cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 4px; min-height: 48px;
+  border-radius: var(--pill); background: var(--lime); color: var(--blue); font-weight: 700; text-decoration: none;
+  border: 2px solid var(--lime); transition: background .2s, color .2s;
+}
+.cta:hover { background: transparent; color: var(--lime); }
+.ctaLabel { display: none; }
+.avatar { width: 38px; height: 38px; border-radius: 50%; overflow: hidden; overflow: clip; background: var(--white); color: var(--gray); display: grid; place-items: center; flex: none; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.avatar svg { width: 24px; height: 24px; display: block; }
+.menuBtn { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.3); background: transparent; color: var(--white); display: grid; place-items: center; }
+.menuBtn svg { width: 22px; height: 22px; }
+.cta.compact { padding: 4px; }
+
+.sub { display: none; }
+
+/* Drawer móvil */
+.drawer {
+  position: fixed; inset: 0; z-index: 60; background: var(--blue); color: var(--white);
+  display: flex; flex-direction: column; padding: 0 var(--gutter) 32px; overflow-y: auto;
+  animation: slide .25s var(--ease);
+}
+@keyframes slide { from { opacity: 0; transform: translateY(-12px) } }
+.drawerTop { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); flex: none; }
+.drawerNav { display: grid; gap: 2px; margin: 16px 0 24px; }
+.drawerNav a { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: 2.1rem; line-height: 1.15; text-decoration: none; padding: 6px 0; }
+.drawerNav a:hover { color: var(--lime); }
+.drawerLabel { font-size: var(--fs-xs); letter-spacing: .12em; text-transform: uppercase; color: var(--gray); margin-top: 18px; }
+.drawerEvents { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.drawerEvents a { padding: .55em 1.1em; border: 1.5px solid var(--blue-600); border-radius: var(--pill); text-decoration: none; font-weight: 700; }
+.drawerEvents a.current { border-color: var(--lime); }
+.drawerFoot { margin-top: auto; display: grid; gap: 10px; }
+
+@media (min-width: 1024px) {
+  .nav { display: block; }
+  .menuBtn { display: none; }
+  .ctaLabel { display: inline; }
+  .cta:has(.ctaLabel) { padding-left: 18px; }
+  .logo img { height: 46px; }
+  .sub { display: flex; justify-content: center; gap: clamp(24px, 5vw, 96px); padding-bottom: 10px; margin-top: -4px; }
+  .sub a { font-weight: 800; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; font-size: .95rem; padding: 4px 2px; border-bottom: 2px solid transparent; }
+  .sub a:hover { color: var(--lime); }
+  .sub a.current { border-color: var(--lime); }
+  .solid .sub { display: none; }
+}
+
+/* Menú del usuario */
+.user { position: relative; }
+.cta { cursor: pointer; font: inherit; font-weight: 700; }
+.userMenu {
+  position: absolute; right: 0; top: calc(100% + 10px); z-index: 70; width: min(300px, calc(100vw - 32px));
+  padding: 10px; border-radius: var(--radius); color: var(--white);
+  background: #060a2c; border: 1px solid rgba(255,255,255,.22); box-shadow: 0 24px 60px -12px rgba(0,0,0,.6);
+  animation: drop .18s var(--ease);
+}
+@keyframes drop { from { opacity: 0; transform: translateY(-6px) } }
+.userHead { display: flex; gap: 12px; align-items: center; padding: 8px 8px 12px; border-bottom: 1px solid rgba(255,255,255,.14); margin-bottom: 6px; }
+.userHead .avatar { width: 44px; height: 44px; }
+.userHead b { display: block; line-height: 1.2; }
+.userHead small { color: rgba(255,255,255,.65); font-size: var(--fs-xs); word-break: break-all; }
+.userMenu a, .userMenu button.item { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: .7em .8em; border-radius: 10px; border: 0; background: none; color: inherit; text-decoration: none; font-weight: 600; text-align: left; }
+.userMenu a:hover, .userMenu button.item:hover { background: rgba(255,255,255,.12); color: var(--lime); }
+.userMenu .sep { height: 1px; background: rgba(255,255,255,.14); margin: 6px 0; }
+.userMenu .logout { color: #ffb3b3; }
+
+.userMenu svg { width: 16px; height: 16px; flex: none; }
