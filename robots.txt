@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /tablero
-Disallow: /inscripcion
-
-Sitemap: https://www.athleticsa.com/sitemap.xml
