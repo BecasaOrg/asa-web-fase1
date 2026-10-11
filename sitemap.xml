@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- URLs finales de producción (Next.js, sin #). Desarrollo: generarlo con app/sitemap.ts. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.athleticsa.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.athleticsa.com/nuestra-historia</loc><priority>0.8</priority></url>
+  <url><loc>https://www.athleticsa.com/servicios</loc><priority>0.9</priority></url>
+  <url><loc>https://www.athleticsa.com/becasa</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.athleticsa.com/becasa/bucaramanga</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.athleticsa.com/aviso-legal</loc><priority>0.2</priority></url>
+  <url><loc>https://www.athleticsa.com/privacidad</loc><priority>0.2</priority></url>
+  <url><loc>https://www.athleticsa.com/cookies</loc><priority>0.2</priority></url>
+</urlset>
